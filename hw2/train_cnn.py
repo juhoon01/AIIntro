@@ -12,13 +12,13 @@ from common.trainer import Trainer
 
 # 시간이 오래 걸릴 경우 데이터를 줄인다.
 x_train, t_train = x_train[:5000], t_train[:5000]
-x_test, t_test = x_test[:1000], t_test[:1000]
+x_test, t_test = x_test[:4000], t_test[:4000]
 
 max_epochs = 20
 
 network = SimpleConvNet(input_dim=(1,28,28), 
-                        conv_param = {'filter_num': 32, 'filter_size': 5, 'pad': 0, 'stride': 1},
-                        hidden_size=256, output_size=10, weight_init_std=0.01)
+                        conv_param = {'filter_num': 64, 'filter_size': 5, 'pad': 0, 'stride': 1},
+                        hidden_size=512, output_size=10, weight_init_std=0.01)
                         
 trainer = Trainer(network, x_train, t_train, x_test, t_test,
                   epochs=max_epochs, mini_batch_size=100,
