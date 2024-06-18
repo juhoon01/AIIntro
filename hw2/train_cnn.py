@@ -11,7 +11,7 @@ from common.trainer import Trainer
 (x_train, t_train), (x_test, t_test) = load_mnist(flatten=False)
 
 # 시간이 오래 걸릴 경우 데이터를 줄인다.
-x_train, t_train = x_train[:5000], t_train[:5000]
+x_train, t_train = x_train[:20000], t_train[:20000]
 x_test, t_test = x_test[:4000], t_test[:4000]
 
 max_epochs = 20
